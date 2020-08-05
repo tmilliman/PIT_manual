@@ -2,11 +2,11 @@
 PhenoCam Installation Tool (PIT) is a set of scripts for Linux/Mac OSX and Windows taking care of the settings as needed by cameras installed by or associated with the [PhenoCam Network](http://phenocam.sr.unh.edu/). We try to explain this in few simple steps as follows.
 
 ## Software Prerequisites
-For the script to run successfully you will need a `Telnet` client. `Telnet` is not installed by default on recent updates of MacOS or Windows machines but can still be manually installed. For instructions on how to enable `Telnet` check out the following links for different operating systems:
+For the script to run successfully, you will need a `Telnet` client. `Telnet` is not installed by default on recent updates of MacOS or Windows machines but can still be manually installed. For instructions on how to enable `Telnet` check out the following instructions for different operating systems:
 
 - **Windows 7**: See this article to [Enable Telnet in Windows 7 from WikiHow](https://www.wikihow.com/Activate-Telnet-in-Windows-7)
 - **Windows 10**: See this article to [Enable Telnet in Windows 10 from Miscrosft](https://social.technet.microsoft.com/wiki/contents/articles/38433.windows-10-enabling-telnet-client.aspx)
-- **Mac OS**: You can install telnet using the Homebrew framework using the following commands (skip the first if you have brew running).
+- **MacOS**: You can install telnet using the Homebrew framework using the following commands (skip the first if you have `brew` running).
 ```{shell}
 # install brew (this might take a while)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -16,11 +16,11 @@ brew install telnet
 ```
 
 ## Download the PIT
-The first step to download the PIT as a zip file from [here](https://github.com/khufkens/phenocam-installation-tool/zipball/master). 
-Once the zip file was downloaded, extract the file take a note where the extracted directory is located on your machine. You will need this for the next step
+The first step is to download the PIT as a zip file from [here](https://github.com/khufkens/phenocam-installation-tool/zipball/master). 
+Once the zip file was downloaded, extract the file and take a note where the extracted directory is located on your machine. You will need this for the next step.
 
 ## Use the PIT
-The installation script runs within a terminal on all platforms. To open a terminal search for “Terminal” in OSX spotlight or “Command Prompt” in the program search field (under the Start button) in Windows. The installation requires you to have a working internet connection on the camera. Make sure the camera and the computer are on the same network. *Note:* Do not connect the camera directly to the computer. 
+The installation script runs within a terminal on all platforms. To open a terminal search for the `Terminal` in MacOS spotlight or the `Command Prompt` in the program search field in Windows. Make sure the camera and the computer are on the same network with internet. [*Note:* Do not connect the camera directly to the computer.]
 
 1. Open the `Terminal` or the `Command Prompt` and change the directory to where you extracted the zip file using the `cd` command. e.g.
 ```{shell}
@@ -28,12 +28,13 @@ cd ~/Downloads/khufkens-phenocam-installation-tool-53553a6/
 ```
 
 2. Enter the `PIT` command as described by examples below:
+
 **On Windows:**  
 ```{shell}
 PIT.bat IP USER PASSWORD CAMERA TIME_OFFSET TZ CRON_START CRON_END CRON_INT FTP_MODE
 ```
 
-**On Linux / Mac OS:** 
+**On Linux / MacOS:** 
 ```{shell}
 sh PIT.sh IP USER PASSWORD CAMERA TIME_OFFSET TZ CRON_START CRON_END CRON_INT FTP_MODE
 ```
