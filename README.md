@@ -1,12 +1,13 @@
 # Instruction for PhenoCam Installation Tool
-PhenoCam Installation Tool (PIT) is a set of scripts for Linux/Mac OSX and Windows taking care of the settings as needed by cameras installed by or associated with the [PhenoCam Network](http://phenocam.sr.unh.edu/). We try to explain this in few simple steps as follows.
+PhenoCam Installation Tool (PIT) is a command line script which is used to configure a StarDot camera for the [PhenoCam Network](http://phenocam.sr.unh.edu/). There are separate versions for Linux/Mac OSX (PIT.sh) and Windows (PIT.bat). In this document we try to explain how to run the script in a few simple steps.  For a more detailed description refer to the PIT [github page](https://github.com/khufkens/phenocam-installation-tool/zipball/master).
 
 ## Software Prerequisites
-For the script to run successfully, you will need a `Telnet` client. `Telnet` is not installed by default on recent updates of MacOS or Windows machines but can still be manually installed. For instructions on how to enable `Telnet` check out the following instructions for different operating systems:
+For the script to run successfully, you will need a `telnet` client. Because `telnet` is a legacy protocol and is not considered secure it is not installed by default on recent versions of most operating systems. It can however still be manually installed. For instructions on how to enable `Telnet` check out the following instructions/links for different the operating systems:
 
 - **Windows 7**: See this article to [Enable Telnet in Windows 7 from WikiHow](https://www.wikihow.com/Activate-Telnet-in-Windows-7)
-- **Windows 10**: See this article to [Enable Telnet in Windows 10 from Miscrosft](https://social.technet.microsoft.com/wiki/contents/articles/38433.windows-10-enabling-telnet-client.aspx)
-- **MacOS**: You can install telnet using the Homebrew framework using the following commands (skip the first if you have `brew` running).
+- **Windows 10**: See this article to [Enable Telnet in Windows 10 from Microsoft](https://social.technet.microsoft.com/wiki/contents/articles/38433.windows-10-enabling-telnet-client.aspx)
+- **MacOS**:
+You can install telnet using the Homebrew framework by typing the following commands in a terminal window.  Skip the first if you already have `brew` running.
 ```{shell}
 # install brew (this might take a while)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -14,15 +15,33 @@ For the script to run successfully, you will need a `Telnet` client. `Telnet` is
 # install telnet
 brew install telnet
 ```
+- **Linux**: Most linux distributions will provide a telnet package but not install it by default.  Search for telnet using the standard packaging
+tools for your distribution.  
+
+For debian/ubuntu you would type the following command in a terminal window:
+```
+sudo apt install telnet
+```
+For CentOS/RHEL/Scientific Linux:
+```
+yum install telnet -y
+```
 
 ## Download the PIT
 The first step is to download the PIT as a zip file from [here](https://github.com/khufkens/phenocam-installation-tool/zipball/master). 
-Once the zip file was downloaded, extract the file and take a note where the extracted directory is located on your machine. You will need this for the next step.
+Once the zip file was downloaded, extract the file and take a note where the extracted directory is located on your machine. 
+You will need this for the next step.  Typically, this will be in a Downloads directory/folder, e.g. Downloads/ 
 
 ## Use the PIT
-The installation script runs within a terminal on all platforms. To open a terminal search for the `Terminal` in MacOS spotlight or the `Command Prompt` in the program search field in Windows. Make sure the camera and the computer are on the same network with internet. [*Note:* Do not connect the camera directly to the computer.]
+The installation script runs within a terminal on all platforms. To open a terminal search for the `Terminal` in MacOS spotlight or the `Command Prompt` in the program search field in Windows. Make sure the camera and the computer are on the same network with internet access. [*Note:* Do not connect the camera directly to the computer.]
 
 1. Open the `Terminal` or the `Command Prompt` and change the directory to where you extracted the zip file using the `cd` command. e.g.
+
+**On Windows:**  
+```{shell}
+cd Downloads\khufkens-phenocam-installation-tool-53553a6
+```
+**On Linux / MacOS:**
 ```{shell}
 cd ~/Downloads/khufkens-phenocam-installation-tool-53553a6/
 ```
